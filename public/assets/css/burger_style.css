@@ -2,23 +2,28 @@ body {
     background-image:url(../img/burger1.png);
    
   background-repeat: no-repeat;
-  background-color: yellow;
+  background-color: rgb(182, 182, 48);
   background-position: right;
+  
   
    
 }
 pre {
+    margin-top: 10px;
     font-size: 1.5em;
-    font-family: 'Times New Roman', Times, serif;
-margin: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 
 }
 #top-bar{
     text-align: center;
     height: auto;
 }
-.btn-defaut{
+.btn-default{
     background-color:whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 10px;
+    
 }
 .row{
     height: auto;
@@ -26,4 +31,13 @@ margin: 10px;
 .button-size{
     width: 200px;
     height: 30px;
+}
+input{
+        border-radius: 5px;
+        width: 200px;
+        height: 40px;
+    }
+    
+h2{
+    padding-top: 10px;
 }
