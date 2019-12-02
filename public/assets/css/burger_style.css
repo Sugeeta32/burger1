@@ -1,0 +1,29 @@
+body {
+    background-image:url(../img/burger1.png);
+   
+  background-repeat: no-repeat;
+  background-color: yellow;
+  background-position: right;
+  
+   
+}
+pre {
+    font-size: 1.5em;
+    font-family: 'Times New Roman', Times, serif;
+margin: 10px;
+
+}
+#top-bar{
+    text-align: center;
+    height: auto;
+}
+.btn-defaut{
+    background-color:whitesmoke;
+}
+.row{
+    height: auto;
+}
+.button-size{
+    width: 200px;
+    height: 30px;
+}
