@@ -13,8 +13,8 @@ var orm = {
     });
 },
 
-update: function(tableInput, condition, cb){
-    dbConnection.query('UPDATE ' + tableInput +' SET devoured=true WHERE id = ' + condition +';' , function(err,queryResult){
+update: function(tableInput, condition, state, cb){
+    dbConnection.query('UPDATE ' + tableInput +' SET devoured= ' +state +' WHERE id = ' + condition +';' , function(err,queryResult){
         if(err){
             console.log('orm error =' + err);
             throw err;
@@ -23,8 +23,24 @@ update: function(tableInput, condition, cb){
         cb(queryResult);
     });
 
-}
-    //var queryString
+},
+
+create: function(tableInput, burgerName, burgerId,  cb){ 
+    //INSERT INTO `burgers_db`.`burgers` (`id`, `burger_name`, `devoured`) VALUES ('4', 'PANEER', '0');
+    dbConnection.query('INSERT INTO ' + tableInput +' SET ?', 
+    { id: burgerId,
+    burger_name: burgerName,
+    devoured: false
+    },
+     function(err,queryResult){
+        if(err){
+            console.log('orm error =' + err);
+            throw err;
+        } 
+        // console.log('orm all successful ' + result);
+        cb(queryResult);
+    });
+    }
 };
 // Export the orm object for the model (burger.js).
 module.exports = orm;

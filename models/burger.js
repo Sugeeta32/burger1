@@ -6,11 +6,17 @@
             cb(res);
         })
     },
-    update: function(id, cb) {
+    update: function(id, state,cb) {
         console.log('update in burger js id = ' + id);
-        orm.update('burgers',id ,function(res){
+        console.log('update in burger js state = ' + state);
+        orm.update('burgers',id ,state, function(res){
             cb(res);
         })
+    },
+    create: function(burger_Name, burger_Id,cb){
+        orm.create('burgers', burger_Name, burger_Id,function(res){
+        cb(res);
+})
     }
  }
 module.exports = burger;

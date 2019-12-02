@@ -16,6 +16,7 @@ app.set("view engine", "handlebars");
 
 var port = 3000;
 app.listen( port);
+console.log("listening on port number"+port);
 
 var routes = require('./controllers/burgers_controller.js');
 app.use(routes);

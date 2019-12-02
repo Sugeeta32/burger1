@@ -1,8 +1,24 @@
 <div class="container">
   <div class=" row">
     <div class=" col-xs-12 text-center" id="top-bar">
+      <h2> Add Burger !</h2>
+
+    </div>
+    <div>
+      <form method="post" action="/burgers/create?_method=POST" class="button-size">
+            <input name="newBurger" type="text">
+            <br>
+            <button type="submit" class="btn btn-defaut">add me</button>
+
+          </form>
+    </div>
+  </div>
+
+  <div class=" row">
+    <div class=" col-xs-12 text-center" id="top-bar">
       <h2>Burgers are here again!</h2>
     </div>
+    
 
     <div class=" col-xs-6 text-center" class="task">
       <div class="row">
@@ -10,22 +26,43 @@
         {{#each burgers_data}}
         {{#unless this.devoured}}
         <div class=" col-xs-9 text-center">
-         <pre>{{this.id}}</pre>
+          <pre>{{this.id}}</pre>
           <pre>{{this.burger_name}}</pre>
         </div>
         <div class=" col-xs-3 text-center">
-          <form method="POST" action="/burgers/update?_method=PUT" class="button-size">
-            <input type="hidden" name="burger_id"  value={{this.id}}>
+          <form method="post" action="/burgers/update/devour?_method=PUT" class="button-size">
+            <input type="hidden" name="burger_id" type="text" value={{this.id}}>
             <br>
             <button type="submit" class="btn btn-defaut">Eat me</button>
 
           </form>
         </div>
-
         {{/unless}}
         {{/each}}
+      </div>
+    </div>
+    <div class=" col-xs-12 text-center" id="top-bar">
+      <h2>Serve Burgers Again!</h2>
+    </div>
+    <div class=" col-xs-6 text-center" class="task">
+      <div class="row">
+        {{!-- {{burgers_data}} --}}
+        {{#each burgers_data}}
+        {{#if this.devoured}}
+        <div class=" col-xs-9 text-center">
+          <pre>{{this.id}}</pre>
+          <pre>{{this.burger_name}}</pre>
+        </div>
+        <div class=" col-xs-3 text-center">
+          <form method="post" action="/burgers/update/serve?_method=PUT" class="button-size">
+            <input type="hidden" name="burger_serve_id" type="text" value={{this.id}}>
+            <br>
+            <button type="submit" class="btn btn-defaut">Serve me</button>
 
-        
+          </form>
+        </div>
+        {{/if}}
+        {{/each}}
       </div>
     </div>
   </div>
