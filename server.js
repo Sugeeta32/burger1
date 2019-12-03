@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var exphbs = require('express-handlebars');
 var app = express();
+var PORT = process.env.PORT || 3000;
 require("dotenv").config();
 
 app.use(express.static(__dirname + '/public'));
@@ -16,9 +17,11 @@ app.set("view engine", "handlebars");
 // var mysql = require("mysql"); 
 
 console.log(process.env.PW);
-var port = process.env.port || 3000;
-app.listen(port);
-console.log("listening on port number" + port);
+
+app.listen(PORT,function(){
+    console.log("listening on port number" + PORT);
+});
+
 
 var routes = require('./controllers/burgers_controller.js');
 app.use(routes);
