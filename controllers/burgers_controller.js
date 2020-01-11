@@ -8,11 +8,10 @@ router1.get('/', function (req, res) {
    burger.getAllBurgers(function (burgers_data) {
       console.log(burgers_data.length);
       //recCount = burgers_data.length;
-      var len = burgers_data.length;
-      var lastDbRec = burgers_data[len-1] ;
-      console.log('lastDbRec=' + lastDbRec);
-      nextId = lastDbRec.id + 1;
-      res.render('index', { burgers_data });
+      if(burgers_data.length >0 ){
+         res.render('index', { burgers_data });
+      }
+      
    });
 
 });
