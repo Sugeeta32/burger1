@@ -4,7 +4,7 @@ var burger = require('../models/burger.js');
 var nextId;
 //console.log(burger);
 router1.get('/', function (req, res) {
-   // console.log(burgers_data);
+    console.log('********************************');
    burger.getAllBurgers(function (burgers_data) {
       console.log(burgers_data.length);
       //recCount = burgers_data.length;
