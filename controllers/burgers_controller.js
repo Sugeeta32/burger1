@@ -8,9 +8,9 @@ router1.get('/', function (req, res) {
    burger.getAllBurgers(function (burgers_data) {
       console.log(burgers_data.length);
       //recCount = burgers_data.length;
-      if(burgers_data.length >0 ){
+     // if(burgers_data.length >0 ){
          res.render('index', { burgers_data });
-      }
+      //}
       
    });
 
